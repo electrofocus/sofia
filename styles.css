@@ -1,0 +1,243 @@
+/* ---------- reset & base ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Cossette Texte', sans-serif;
+  /* full-bleed color split, matched to where it falls inside the
+     1512px-wide stage, so it still spans edge-to-edge on wider screens.
+     min-height above keeps this a single fill with no repeat artifacts
+     when the page is shorter than the viewport. */
+  background: linear-gradient(
+    to bottom,
+    var(--color-lavender) 0 min(19.444vw, 294px),
+    var(--color-green) min(19.444vw, 294px) 100%
+  );
+  background-repeat: no-repeat;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 0.12em;
+}
+
+a:hover {
+  text-decoration-color: transparent;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- design tokens ---------- */
+
+:root {
+  --color-lavender: #9ba6d5;
+  --color-green: #38ac81;
+  --color-ink: #000;
+}
+
+/* ==========================================================
+   Desktop / tablet: scaled reproduction of the Figma poster
+   ========================================================== */
+
+.stage {
+  position: relative;
+  width: 100%;
+  max-width: 1512px;
+  margin: 0 auto;
+  /* height is 1512 x 1012, not the Figma frame's 1512 x 981: the printer
+     collage image runs past the frame's bottom edge in the original design,
+     so the box is grown to fully contain it instead of relying on visual
+     overflow, which some browsers don't extend the background to cover */
+  aspect-ratio: 1512 / 1012;
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+.info {
+  position: absolute;
+  left: 5.291%;
+  top: 7.905%;
+  width: 40.807%;
+  color: var(--color-ink);
+  font-size: clamp(13px, 0.992cqw, 15px);
+  line-height: 2.105;
+}
+
+.info__header {
+  margin-bottom: 2.105em;
+}
+
+.info__body {
+  margin-top: 2.105em;
+}
+
+.info__works li {
+  margin-bottom: 0;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 0.12em;
+}
+
+.info__contacts-label {
+  margin-top: 2.105em;
+}
+
+.info__email a {
+  text-decoration: none;
+}
+
+.collage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.collage__item {
+  position: absolute;
+  width: auto;
+  height: auto;
+}
+
+.collage__item--fabric {
+  left: 47.090%;
+  top: 4.842%;
+  width: 30.622%;
+}
+
+.collage__item--window {
+  left: 83.400%;
+  top: 4.545%;
+  width: 11.640%;
+}
+
+.collage__item--chair {
+  left: 82.407%;
+  top: 21.344%;
+  width: 13.624%;
+}
+
+.collage__item--pretzel {
+  left: 32.011%;
+  top: 30.040%;
+  width: 9.127%;
+}
+
+.collage__item--polaroid {
+  left: 50.728%;
+  top: 32.806%;
+  width: 11.706%;
+}
+
+.collage__item--gnome {
+  left: 71.032%;
+  top: 40.316%;
+  width: 11.376%;
+}
+
+.collage__item--flowers {
+  left: 27.116%;
+  top: 63.043%;
+  width: 18.982%;
+}
+
+.collage__item--mountains {
+  left: 55.093%;
+  top: 64.229%;
+  width: 39.749%;
+}
+
+.collage__item--printer {
+  left: 2.579%;
+  top: 72.628%;
+  width: 14.087%;
+}
+
+/* ==========================================================
+   Mobile: linear, readable layout
+   ========================================================== */
+
+@media (max-width: 880px) {
+  body {
+    background: var(--color-green);
+  }
+
+  .stage {
+    max-width: none;
+    aspect-ratio: auto;
+    overflow: visible;
+  }
+
+  .info {
+    position: static;
+    width: auto;
+    font-size: 16px;
+  }
+
+  .info__header {
+    background: var(--color-lavender);
+    padding: 32px 24px;
+    margin-bottom: 0;
+  }
+
+  .info__body {
+    background: var(--color-green);
+    padding: 32px 24px;
+    margin-top: 0;
+  }
+
+  .collage {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+    background: var(--color-green);
+    padding: 0 24px 32px;
+  }
+
+  .collage__item {
+    position: static;
+    width: 140px;
+  }
+
+  .collage__item--fabric,
+  .collage__item--mountains {
+    width: 220px;
+  }
+}
+
+@media (max-width: 420px) {
+  .collage__item {
+    width: 42%;
+  }
+
+  .collage__item--fabric,
+  .collage__item--mountains {
+    width: 100%;
+  }
+}
