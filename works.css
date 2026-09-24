@@ -27,6 +27,7 @@
 
 .work__menu {
   position: absolute;
+  left: 88.757cqw;
   top: 5.291cqw;
 }
 
@@ -37,6 +38,17 @@
 
 .work__img {
   max-width: none;
+  height: auto;
+}
+
+.work__player {
+  position: absolute;
+  width: 89.352cqw;
+  aspect-ratio: 1351 / 761;
+  display: grid;
+  place-items: center;
+  background: #d9d9d9;
+  color: var(--color-ink);
 }
 
 /* ---------- Everything's new, and some things aren't (1512 x 3203) ---------- */
@@ -105,15 +117,8 @@
 }
 
 .film__player {
-  position: absolute;
   left: 5.291cqw;
   top: 148.148cqw;
-  width: 89.352cqw;
-  aspect-ratio: 1351 / 761;
-  display: grid;
-  place-items: center;
-  background: #d9d9d9;
-  color: var(--color-ink);
 }
 
 /* ---------- Ghosts (1512 x 1681) ---------- */
@@ -125,10 +130,6 @@
 
 .ghosts {
   aspect-ratio: 1512 / 1681;
-}
-
-.ghosts__menu {
-  left: 88.757cqw;
 }
 
 .ghosts__intro {
@@ -212,6 +213,82 @@
   width: 45.172cqw;
 }
 
+/* ---------- Loy qo'llar / Where Do the Plants Sleep? (1512 x 4906) ---------- */
+
+.loy-page,
+.loy {
+  background: #bed59b;
+}
+
+.loy {
+  aspect-ratio: 1512 / 4906;
+  color: var(--color-ink);
+}
+
+.loy__intro {
+  left: 5.291cqw;
+  top: 5.291cqw;
+  width: 40.807cqw;
+}
+
+.loy__media {
+  width: 49.934cqw;
+  aspect-ratio: 755 / 425;
+  object-fit: cover;
+}
+
+.loy__clip-2 {
+  left: 50.132cqw;
+  top: 19.709cqw;
+}
+
+.loy__still-1 {
+  left: 50.066cqw;
+  top: 68.783cqw;
+}
+
+.loy__still-2 {
+  left: 0;
+  top: 68.783cqw;
+  width: 50.066cqw;
+  aspect-ratio: 757 / 426;
+}
+
+.loy__clip-1 {
+  left: 25.132cqw;
+  top: 102.381cqw;
+}
+
+.loy__clip-4 {
+  left: 25cqw;
+  top: 135.979cqw;
+}
+
+.loy__clip-3 {
+  left: 25.463cqw;
+  top: 169.577cqw;
+}
+
+.loy__still-3 {
+  left: 0;
+  top: 203.175cqw;
+  width: 100cqw;
+  aspect-ratio: 1512 / 851;
+}
+
+.loy__player {
+  left: 5.423cqw;
+  top: 264.947cqw;
+}
+
+.loy__request {
+  position: absolute;
+  left: 50.132cqw;
+  top: 317.063cqw;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
 /* ==========================================================
    Mobile: linear, readable layout
    ========================================================== */
@@ -235,7 +312,7 @@
   .work__menu,
   .work__text,
   .work__img,
-  .film__player,
+  .work__player,
   .ghosts__stack {
     position: relative;
     left: auto;
@@ -257,8 +334,15 @@
     object-fit: cover;
   }
 
-  .film__player {
+  .work__player {
     padding: 24px;
+    text-align: center;
+  }
+
+  .loy__request {
+    position: static;
+    transform: none;
+    white-space: normal;
     text-align: center;
   }
 
