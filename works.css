@@ -289,6 +289,40 @@
   white-space: nowrap;
 }
 
+/* ---------- Jolda (1512 x 1427) ---------- */
+
+.jolda-page {
+  background: #6b6eaa;
+}
+
+.jolda {
+  aspect-ratio: 1512 / 1427;
+  color: var(--color-ink);
+}
+
+.jolda__background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.jolda__menu {
+  color: #fff;
+}
+
+.jolda__intro {
+  left: 5.291cqw;
+  top: 5.291cqw;
+  width: 40.807cqw;
+}
+
+.jolda__player {
+  left: 5.423cqw;
+  top: 30.423cqw;
+}
+
 /* ==========================================================
    Mobile: linear, readable layout
    ========================================================== */
@@ -296,6 +330,7 @@
 @media (max-width: 880px) {
   .work {
     aspect-ratio: auto;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 32px;
