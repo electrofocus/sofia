@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ghosts — Sofia Seitkhalil</title>
+  <meta name="description" content="Ghosts — mixed media series by Sofia Seitkhalil, 2021–2022.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cossette+Texte:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="works.css">
+</head>
+<body class="ghosts-page">
+  <main class="work ghosts">
+    <img class="work__hand" src="assets/hand.webp" alt="" width="316" height="409">
+
+    <a class="work__menu ghosts__menu" href="index.html">Menu</a>
+
+    <section class="work__text ghosts__intro">
+      <p>Ghosts<br>Mixed media<br>2021&ndash;2022</p>
+      <p>This series originated from my photo archive. As I looked through the photos, I noticed things that hadn&rsquo;t caught my attention before; the photos evoked new feelings in me. Through them, I learned something about myself back then, and about the world I lived in just a few years ago. Unconsciously, I felt compelled to add something&mdash;to align what I saw with what I felt.</p>
+      <p>That&rsquo;s how this playful series emerged, straddling the line between graphic design and photography&mdash;my two great passions. Interestingly, around the time I was creating these works, I began to practice graphic design less and less and focus more on photography&mdash;perhaps this served as a transitional bridge in many ways.</p>
+    </section>
+
+    <button class="ghosts__stack" type="button" aria-label="Show next work">
+      <img class="ghosts__borderline-goja" src="assets/ghosts/borderline-goja.webp" alt="" width="1343" height="1790" loading="lazy">
+      <img class="ghosts__untitled" src="assets/ghosts/borderline-untitled.webp" alt="" width="1268" height="1790" loading="lazy">
+      <img class="ghosts__borderline" src="assets/ghosts/borderline.webp" alt="" width="1343" height="1790" loading="lazy">
+      <img class="ghosts__burned" src="assets/ghosts/burned-outside-bleeding-inside.webp" alt="" width="1194" height="1790" loading="lazy">
+      <img class="ghosts__cock" src="assets/ghosts/cock.webp" alt="" width="1331" height="1790" loading="lazy">
+      <img class="ghosts__jakho" src="assets/ghosts/jakho.webp" alt="" width="1338" height="1790">
+    </button>
+
+    <img class="work__img ghosts__odina" src="assets/ghosts/odina.webp" alt="" width="1194" height="1790">
+    <img class="work__img ghosts__red-center" src="assets/ghosts/red-center.webp" alt="" width="1194" height="1790">
+    <img class="work__img ghosts__opa" src="assets/ghosts/opa.webp" alt="" width="1790" height="1346">
+    <img class="work__img ghosts__ushko" src="assets/ghosts/ushko.webp" alt="" width="1343" height="1790" loading="lazy">
+    <img class="work__img ghosts__untitled-1" src="assets/ghosts/untitled-1.webp" alt="" width="1306" height="1790">
+    <img class="work__img ghosts__toza-asal" src="assets/ghosts/toza-asal.webp" alt="" width="1367" height="1790" loading="lazy">
+  </main>
+
+  <script>
+    const stack = document.querySelector('.ghosts__stack');
+    stack.addEventListener('click', () => stack.prepend(stack.lastElementChild));
+  </script>
+</body>
+</html>
