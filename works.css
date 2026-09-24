@@ -17,6 +17,14 @@
   margin-top: 2.105em;
 }
 
+.work__background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .work__hand {
   position: absolute;
   left: 89.550cqw;
@@ -300,14 +308,6 @@
   color: var(--color-ink);
 }
 
-.jolda__background {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .jolda__menu {
   color: #fff;
 }
@@ -366,6 +366,44 @@
 
 .circle__photo--4 {
   top: 269.312cqw;
+}
+
+/* ---------- TASHKENT<3YOU (1512 x 3229) ---------- */
+
+.tashkent-page {
+  background: #c6e6f3;
+}
+
+.tashkent {
+  aspect-ratio: 1512 / 3229;
+  color: var(--color-ink);
+}
+
+.tashkent__intro {
+  left: 28.836cqw;
+  top: 5.291cqw;
+  width: 42.328cqw;
+  text-align: center;
+}
+
+.tashkent__player {
+  left: 5.291cqw;
+  top: 47.421cqw;
+}
+
+.tashkent__photo {
+  left: 5.291cqw;
+  width: 89.352cqw;
+  aspect-ratio: 1351 / 761;
+  object-fit: cover;
+}
+
+.tashkent__photo--1 {
+  top: 102.712cqw;
+}
+
+.tashkent__photo--2 {
+  top: 158.003cqw;
 }
 
 /* ==========================================================
