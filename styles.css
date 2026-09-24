@@ -58,26 +58,22 @@ img {
 .stage {
   position: relative;
   width: 100%;
-  /* height is 1512 x 1012, not the Figma frame's 1512 x 981: the printer
-     collage image runs past the frame's bottom edge in the original design,
-     so the box is grown to fully contain it instead of relying on visual
-     overflow, which some browsers don't extend the background to cover */
-  aspect-ratio: 1512 / 1012;
-  overflow: hidden;
+  min-height: 100vh;
   container-type: inline-size;
-  /* 294 / 1012: the lavender/green split from the Figma frame */
+  /* 294 / 1512: the lavender/green split from the Figma frame */
   background: linear-gradient(
     to bottom,
-    var(--color-lavender) 0 29.051%,
-    var(--color-green) 29.051% 100%
+    var(--color-lavender) 0 19.444vw,
+    var(--color-green) 19.444vw 100%
   );
 }
 
+/* in flow, so a window too short for the text grows the page instead of
+   cropping it; the collage alone is cropped to the window */
 .info {
-  position: absolute;
-  left: 5.291%;
-  top: 7.905%;
   width: 40.807%;
+  margin-left: 5.291%;
+  padding: 5.291cqw 0;
   color: var(--color-ink);
   font-size: 0.992cqw;
   line-height: 2.105;
@@ -109,6 +105,7 @@ img {
 .collage {
   position: absolute;
   inset: 0;
+  overflow: hidden;
   pointer-events: none;
 }
 
@@ -120,55 +117,55 @@ img {
 
 .collage__item--fabric {
   left: 47.090%;
-  top: 4.842%;
+  top: 3.241cqw;
   width: 30.622%;
 }
 
 .collage__item--window {
   left: 83.400%;
-  top: 4.545%;
+  top: 3.042cqw;
   width: 11.640%;
 }
 
 .collage__item--chair {
   left: 82.407%;
-  top: 21.344%;
+  top: 14.286cqw;
   width: 13.624%;
 }
 
 .collage__item--pretzel {
   left: 32.011%;
-  top: 30.040%;
+  top: 20.106cqw;
   width: 9.127%;
 }
 
 .collage__item--polaroid {
   left: 50.728%;
-  top: 32.806%;
+  top: 21.958cqw;
   width: 11.706%;
 }
 
 .collage__item--gnome {
   left: 71.032%;
-  top: 40.316%;
+  top: 26.984cqw;
   width: 11.376%;
 }
 
 .collage__item--flowers {
   left: 27.116%;
-  top: 63.043%;
+  top: 42.196cqw;
   width: 18.982%;
 }
 
 .collage__item--mountains {
   left: 55.093%;
-  top: 64.229%;
+  top: 42.989cqw;
   width: 39.749%;
 }
 
 .collage__item--printer {
   left: 2.579%;
-  top: 72.628%;
+  top: 48.611cqw;
   width: 14.087%;
 }
 
@@ -178,14 +175,13 @@ img {
 
 @media (max-width: 880px) {
   .stage {
-    aspect-ratio: auto;
     background: none;
-    overflow: visible;
   }
 
   .info {
-    position: static;
     width: auto;
+    margin-left: 0;
+    padding: 0;
     font-size: 16px;
   }
 
@@ -203,6 +199,7 @@ img {
 
   .collage {
     position: static;
+    overflow: visible;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
