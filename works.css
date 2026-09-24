@@ -323,6 +323,51 @@
   top: 30.423cqw;
 }
 
+/* ---------- In the Circle of My Heart (1512 x 5270) ---------- */
+
+.circle-page,
+.circle {
+  background: #efc3d4;
+}
+
+.circle {
+  aspect-ratio: 1512 / 5270;
+  color: var(--color-ink);
+}
+
+.circle__intro {
+  left: 5.291cqw;
+  top: 5.291cqw;
+  width: 40.807cqw;
+}
+
+.circle__drawing {
+  left: 59.259cqw;
+  top: 18.320cqw;
+  width: 26.323cqw;
+}
+
+.circle__photo {
+  left: 0;
+  width: 100cqw;
+}
+
+.circle__photo--1 {
+  top: 68.783cqw;
+}
+
+.circle__photo--2 {
+  top: 135.450cqw;
+}
+
+.circle__photo--3 {
+  top: 202.116cqw;
+}
+
+.circle__photo--4 {
+  top: 269.312cqw;
+}
+
 /* ==========================================================
    Mobile: linear, readable layout
    ========================================================== */
