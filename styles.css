@@ -13,16 +13,7 @@ body {
 body {
   min-height: 100vh;
   font-family: 'Cossette Texte', sans-serif;
-  /* full-bleed color split, matched to where it falls inside the
-     1512px-wide stage, so it still spans edge-to-edge on wider screens.
-     min-height above keeps this a single fill with no repeat artifacts
-     when the page is shorter than the viewport. */
-  background: linear-gradient(
-    to bottom,
-    var(--color-lavender) 0 min(19.444vw, 294px),
-    var(--color-green) min(19.444vw, 294px) 100%
-  );
-  background-repeat: no-repeat;
+  background: var(--color-green);
 }
 
 a {
@@ -67,8 +58,6 @@ img {
 .stage {
   position: relative;
   width: 100%;
-  max-width: 1512px;
-  margin: 0 auto;
   /* height is 1512 x 1012, not the Figma frame's 1512 x 981: the printer
      collage image runs past the frame's bottom edge in the original design,
      so the box is grown to fully contain it instead of relying on visual
@@ -76,6 +65,12 @@ img {
   aspect-ratio: 1512 / 1012;
   overflow: hidden;
   container-type: inline-size;
+  /* 294 / 1012: the lavender/green split from the Figma frame */
+  background: linear-gradient(
+    to bottom,
+    var(--color-lavender) 0 29.051%,
+    var(--color-green) 29.051% 100%
+  );
 }
 
 .info {
@@ -84,7 +79,7 @@ img {
   top: 7.905%;
   width: 40.807%;
   color: var(--color-ink);
-  font-size: clamp(13px, 0.992cqw, 15px);
+  font-size: 0.992cqw;
   line-height: 2.105;
 }
 
@@ -182,13 +177,9 @@ img {
    ========================================================== */
 
 @media (max-width: 880px) {
-  body {
-    background: var(--color-green);
-  }
-
   .stage {
-    max-width: none;
     aspect-ratio: auto;
+    background: none;
     overflow: visible;
   }
 
