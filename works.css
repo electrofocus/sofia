@@ -406,6 +406,43 @@
   top: 158.003cqw;
 }
 
+/* ---------- Blind zone (1512 x 2161) ---------- */
+
+.blind-page,
+.blind {
+  background: #c5b4dd;
+}
+
+.blind {
+  aspect-ratio: 1512 / 2161;
+  color: var(--color-ink);
+}
+
+.blind__menu {
+  color: #fff;
+}
+
+.blind__intro,
+.blind__story {
+  left: 28.836cqw;
+  width: 42.328cqw;
+  text-align: center;
+}
+
+.blind__intro {
+  top: 5.291cqw;
+}
+
+.blind__story {
+  top: 82.540cqw;
+}
+
+.blind__collage {
+  left: 6.349cqw;
+  top: 17.725cqw;
+  width: 87.235cqw;
+}
+
 /* ==========================================================
    Mobile: linear, readable layout
    ========================================================== */
