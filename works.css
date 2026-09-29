@@ -147,90 +147,87 @@
   text-align: center;
 }
 
-/* a pile of works: clicking brings the next one to the top */
-.ghosts__stack {
+/* a pile of works; each one can be dragged around (see ghosts.html).
+   Offsets inside are % of the 789px pile */
+.ghosts__pile {
   position: absolute;
-  left: 27.844cqw;
-  top: 38.360cqw;
-  width: 44.378cqw;
-  height: 59.193cqw;
-  padding: 0;
-  border: 0;
-  background: none;
-  cursor: pointer;
+  left: 23.876cqw;
+  top: 40.675cqw;
+  width: 52.183cqw;
+  aspect-ratio: 1;
 }
 
-.ghosts__stack img {
+.ghosts__card {
   position: absolute;
   top: 0;
-  left: 0;
-  height: 100%;
-  width: auto;
   max-width: none;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
-.ghosts__stack .ghosts__untitled {
-  left: 0.860cqw;
+.ghosts__card:active {
+  cursor: grabbing;
 }
 
-.ghosts__stack .ghosts__burned {
-  left: 1.720cqw;
+.ghosts__card--narrow {
+  left: 16.730%;
+  width: 66.667%;
 }
 
-.ghosts__stack .ghosts__cock {
-  left: 0.132cqw;
+.ghosts__card--wide {
+  left: 12.548%;
+  width: 74.905%;
 }
 
-.ghosts__stack .ghosts__jakho {
-  left: 0.066cqw;
+.ghosts__jakho {
+  left: 12.674%;
+  width: 74.651%;
 }
 
-.ghosts__odina {
-  left: 80.225cqw;
-  top: 8.796cqw;
-  width: 39.484cqw;
+.ghosts__untitled {
+  left: 14.702%;
+  width: 70.722%;
 }
 
-.ghosts__red-center {
-  left: -14.815cqw;
-  top: 0;
-  width: 39.484cqw;
-}
-
-.ghosts__opa {
-  left: 91.270cqw;
-  top: 38.360cqw;
-  width: 59.193cqw;
-}
-
-.ghosts__ushko {
-  left: -19.246cqw;
-  top: 92.262cqw;
-  width: 44.378cqw;
+.ghosts__cock {
+  left: 12.801%;
+  width: 74.398%;
 }
 
 .ghosts__untitled-1 {
-  left: -36.442cqw;
-  top: 31.878cqw;
-  width: 43.188cqw;
+  left: 13.561%;
+  width: 72.877%;
+}
+
+.ghosts__opa {
+  left: 0;
+  top: 12.421%;
+  width: 100%;
 }
 
 .ghosts__toza-asal {
-  left: 82.804cqw;
-  top: 90.212cqw;
-  width: 45.172cqw;
+  left: 11.787%;
+  width: 76.426%;
 }
 
-/* ---------- Loy qo'llar / Where Do the Plants Sleep? (1512 x 4906) ---------- */
+/* ---------- Loy qo'llar / Where Do the Plants Sleep? (1512 x 4648) ---------- */
 
-.loy-page,
-.loy {
-  background: #bed59b;
+.loy-page {
+  background: #3d3c14;
 }
 
 .loy {
-  aspect-ratio: 1512 / 4906;
+  aspect-ratio: 1512 / 4648;
   color: var(--color-ink);
+  background: linear-gradient(
+    #ace3f8 0%,
+    #f8f4ac 2.885%,
+    #d0f8ac 5.288%,
+    #88ba57 74.519%,
+    #3d3c14 100%
+  );
 }
 
 .loy__intro {
@@ -240,61 +237,189 @@
 }
 
 .loy__media {
-  width: 49.934cqw;
-  aspect-ratio: 755 / 425;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
 .loy__clip-2 {
   left: 50.132cqw;
   top: 19.709cqw;
-}
-
-.loy__still-1 {
-  left: 50.066cqw;
-  top: 68.783cqw;
-}
-
-.loy__still-2 {
-  left: 0;
-  top: 68.783cqw;
-  width: 50.066cqw;
-  aspect-ratio: 757 / 426;
+  width: 49.934cqw;
 }
 
 .loy__clip-1 {
-  left: 25.132cqw;
-  top: 102.381cqw;
-}
-
-.loy__clip-4 {
-  left: 25cqw;
-  top: 135.979cqw;
-}
-
-.loy__clip-3 {
-  left: 25.463cqw;
-  top: 169.577cqw;
-}
-
-.loy__still-3 {
   left: 0;
-  top: 203.175cqw;
-  width: 100cqw;
-  aspect-ratio: 1512 / 851;
+  top: 65.608cqw;
+  width: 50.132cqw;
 }
 
-.loy__player {
-  left: 5.423cqw;
-  top: 264.947cqw;
+.loy__still-1 {
+  left: 49.802cqw;
+  top: 65.608cqw;
+  width: 50.198cqw;
 }
 
-.loy__request {
-  position: absolute;
-  left: 50.132cqw;
-  top: 317.063cqw;
-  transform: translateX(-50%);
-  white-space: nowrap;
+/* archive (film) photos, then installation shots */
+.loy__archive-1 {
+  left: 3.968cqw;
+  top: 122.95cqw;
+  width: 16.601cqw;
+}
+
+.loy__archive-2 {
+  left: 0;
+  top: 100.397cqw;
+  width: 25cqw;
+}
+
+.loy__archive-3 {
+  left: 24.934cqw;
+  top: 100.397cqw;
+  width: 25cqw;
+}
+
+.loy__archive-4 {
+  left: 75cqw;
+  top: 100.397cqw;
+  width: 25cqw;
+}
+
+.loy__archive-5 {
+  left: 25cqw;
+  top: 127.05cqw;
+  width: 25cqw;
+}
+
+.loy__archive-6 {
+  left: 50cqw;
+  top: 127.05cqw;
+  width: 25cqw;
+}
+
+.loy__archive-7 {
+  left: 75cqw;
+  top: 127.05cqw;
+  width: 25cqw;
+}
+
+.loy__archive-8 {
+  left: 24.934cqw;
+  top: 153.108cqw;
+  width: 50.132cqw;
+}
+
+.loy__archive-9 {
+  left: 3.902cqw;
+  top: 157.474cqw;
+  width: 16.733cqw;
+}
+
+.loy__archive-10 {
+  left: 79.233cqw;
+  top: 157.474cqw;
+  width: 16.733cqw;
+}
+
+.loy__archive-11 {
+  left: 0;
+  top: 194.18cqw;
+  width: 25cqw;
+}
+
+.loy__archive-12 {
+  left: 24.802cqw;
+  top: 194.18cqw;
+  width: 25cqw;
+}
+
+.loy__archive-13 {
+  left: 62.566cqw;
+  top: 194.18cqw;
+  width: 25cqw;
+}
+
+.loy__archive-14 {
+  left: 28.373cqw;
+  top: 214.881cqw;
+  width: 25cqw;
+}
+
+.loy__archive-15 {
+  left: 53.373cqw;
+  top: 214.881cqw;
+  width: 25cqw;
+}
+
+.loy__archive-16 {
+  left: 3.373cqw;
+  top: 235.648cqw;
+  width: 25cqw;
+}
+
+.loy__archive-17 {
+  left: 28.505cqw;
+  top: 235.648cqw;
+  width: 25cqw;
+}
+
+.loy__archive-18 {
+  left: 75cqw;
+  top: 235.648cqw;
+  width: 25cqw;
+}
+
+.loy__installation-1 {
+  left: -0.066cqw;
+  top: 264.087cqw;
+  width: 19.775cqw;
+}
+
+.loy__installation-2 {
+  left: 20.04cqw;
+  top: 264.087cqw;
+  width: 14.815cqw;
+}
+
+.loy__installation-3 {
+  left: 35.185cqw;
+  top: 264.087cqw;
+  width: 22.222cqw;
+}
+
+.loy__installation-4 {
+  left: 57.738cqw;
+  top: 264.087cqw;
+  width: 22.222cqw;
+}
+
+.loy__installation-5 {
+  left: 80.225cqw;
+  top: 264.087cqw;
+  width: 19.775cqw;
+}
+
+.loy__installation-6 {
+  left: 7.143cqw;
+  top: 279.233cqw;
+  width: 12.5cqw;
+}
+
+.loy__installation-7 {
+  left: 35.185cqw;
+  top: 279.233cqw;
+  width: 22.222cqw;
+}
+
+.loy__installation-8 {
+  left: 57.738cqw;
+  top: 279.233cqw;
+  width: 10.979cqw;
+}
+
+.loy__installation-9 {
+  left: 69.048cqw;
+  top: 279.233cqw;
+  width: 24.934cqw;
 }
 
 /* ---------- Jolda (1512 x 1427) ---------- */
@@ -323,15 +448,15 @@
   top: 30.423cqw;
 }
 
-/* ---------- In the Circle of My Heart (1512 x 5270) ---------- */
+/* ---------- In the Circle of My Heart (1512 x 5081) ---------- */
 
 .circle-page,
 .circle {
-  background: #efc3d4;
+  background: #f0cddb;
 }
 
 .circle {
-  aspect-ratio: 1512 / 5270;
+  aspect-ratio: 1512 / 5081;
   color: var(--color-ink);
 }
 
@@ -343,7 +468,7 @@
 
 .circle__drawing {
   left: 59.259cqw;
-  top: 18.320cqw;
+  top: 14.087cqw;
   width: 26.323cqw;
 }
 
@@ -353,19 +478,184 @@
 }
 
 .circle__photo--1 {
-  top: 68.783cqw;
+  top: 69.378cqw;
 }
 
 .circle__photo--2 {
-  top: 135.450cqw;
+  top: 136.045cqw;
 }
 
 .circle__photo--3 {
-  top: 202.116cqw;
+  top: 202.712cqw;
 }
 
 .circle__photo--4 {
-  top: 269.312cqw;
+  top: 269.378cqw;
+}
+
+/* video-call screenshot laid over the left edge of the second photo */
+.circle__call {
+  left: 0;
+  top: 136.045cqw;
+  width: 25.926cqw;
+}
+
+/* ---------- Sometimes I fall apart (1512 x 5211) ---------- */
+
+.fall-page,
+.fall {
+  background: #f5d2d2;
+}
+
+.fall {
+  aspect-ratio: 1512 / 5211;
+  color: var(--color-ink);
+}
+
+.fall__intro {
+  left: 5.291cqw;
+  top: 5.291cqw;
+  width: 40.807cqw;
+}
+
+.fall__sketch-1 {
+  left: 5.423cqw;
+  top: 86.111cqw;
+  width: 18.452cqw;
+}
+
+.fall__sketch-2 {
+  left: 57.937cqw;
+  top: 24.008cqw;
+  width: 23.413cqw;
+}
+
+.fall__sketch-3,
+.fall__sketch-4 {
+  left: 69.378cqw;
+  width: 20.172cqw;
+}
+
+.fall__sketch-3 {
+  top: 48.082cqw;
+}
+
+.fall__sketch-4 {
+  top: 54.960cqw;
+}
+
+.fall__clip {
+  left: 28.770cqw;
+  top: 74.074cqw;
+  width: 42.659cqw;
+  aspect-ratio: 645 / 363;
+  object-fit: cover;
+}
+
+.fall__player {
+  left: 5.423cqw;
+  top: 120.767cqw;
+}
+
+/* notebook pages, one at a time; arrows sit outside the page */
+.fall__carousel {
+  position: absolute;
+  left: 5.225cqw;
+  top: 182.209cqw;
+  width: 90.675cqw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fall__slides {
+  position: relative;
+  width: 76.951%;
+  aspect-ratio: 1055 / 746;
+}
+
+.fall__slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  visibility: hidden;
+}
+
+.fall__slide.is-active {
+  visibility: visible;
+}
+
+.fall__arrow {
+  width: 1.323cqw;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.fall__arrow img {
+  width: 100%;
+}
+
+.fall__arrow--prev img {
+  transform: rotate(180deg);
+}
+
+.fall__page {
+  width: 28.241cqw;
+}
+
+.fall__page--1 {
+  left: 5.622cqw;
+  top: 242.460cqw;
+}
+
+.fall__page--2 {
+  left: 35.847cqw;
+  top: 242.460cqw;
+}
+
+.fall__page--3 {
+  left: 66.071cqw;
+  top: 242.460cqw;
+}
+
+.fall__page--4 {
+  left: 5.622cqw;
+  top: 264.418cqw;
+}
+
+.fall__page--5 {
+  left: 35.847cqw;
+  top: 264.418cqw;
+}
+
+.fall__page--6 {
+  left: 66.071cqw;
+  top: 264.418cqw;
+}
+
+.fall__page--7 {
+  left: 5.622cqw;
+  top: 286.376cqw;
+}
+
+.fall__page--8 {
+  left: 35.847cqw;
+  top: 286.376cqw;
+}
+
+.fall__page--9 {
+  left: 66.071cqw;
+  top: 286.376cqw;
+}
+
+.fall__polaroid {
+  left: 43.585cqw;
+  top: 318.585cqw;
+  width: 12.831cqw;
 }
 
 /* ---------- TASHKENT<3YOU (1512 x 3229) ---------- */
@@ -406,20 +696,15 @@
   top: 158.003cqw;
 }
 
-/* ---------- Blind zone (1512 x 2161) ---------- */
+/* ---------- Blind zone (1512 x 1978) ---------- */
 
 .blind-page,
 .blind {
-  background: #c5b4dd;
+  background: #47365f;
 }
 
 .blind {
-  aspect-ratio: 1512 / 2161;
-  color: var(--color-ink);
-}
-
-.blind__menu {
-  color: #fff;
+  aspect-ratio: 1512 / 1978;
 }
 
 .blind__intro,
@@ -434,13 +719,367 @@
 }
 
 .blind__story {
-  top: 82.540cqw;
+  top: 76.124cqw;
 }
 
-.blind__collage {
-  left: 6.349cqw;
-  top: 17.725cqw;
-  width: 87.235cqw;
+.blind__open {
+  position: absolute;
+  left: 14.286cqw;
+  top: 19.841cqw;
+  width: 71.429cqw;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+
+.blind__open img {
+  width: 100%;
+}
+
+/* full-screen view of a single work; click anywhere or Esc to close */
+.viewer {
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 16px;
+  border: 0;
+  background: #000;
+  cursor: zoom-out;
+}
+
+.viewer[open] {
+  display: grid;
+  place-items: center;
+}
+
+.viewer img {
+  max-width: 100%;
+  max-height: calc(100vh - 32px);
+  width: auto;
+  height: auto;
+}
+
+/* ---------- Women of Our Mahalla (27452 x 982, scrolls sideways) ----------
+   The frame is scaled to the window height, so offsets are Figma px / 9.82
+   in cqh */
+
+.mahalla-page {
+  background: #fff;
+}
+
+.mahalla {
+  width: calc(100vh * 27452 / 982);
+  height: 100vh;
+  container-type: size;
+  color: var(--color-ink);
+  font-size: 1.527cqh;
+}
+
+@media (min-width: 881px) {
+  .mahalla-page {
+    overflow-y: hidden;
+  }
+
+  .mahalla .work__hand {
+    left: 137.882cqh;
+    width: 16.090cqh;
+  }
+
+  .mahalla .work__menu {
+    left: 136.660cqh;
+    top: 8.147cqh;
+  }
+}
+
+.mahalla__intro,
+.mahalla__opening {
+  top: 8.147cqh;
+  width: 62.831cqh;
+}
+
+.mahalla__intro {
+  left: 8.147cqh;
+}
+
+.mahalla__opening {
+  left: 2637.475cqh;
+}
+
+.mahalla__dscf7037 {
+  left: 81.365cqh;
+  top: 12.226cqh;
+  width: 50.333cqh;
+}
+
+.mahalla__dscf7166 {
+  left: 149.398cqh;
+  top: 26.860cqh;
+  width: 70.802cqh;
+}
+
+.mahalla__dscf7151 {
+  left: 238.000cqh;
+  top: 18.060cqh;
+  width: 94.337cqh;
+}
+
+.mahalla__dscf6967 {
+  left: 350.136cqh;
+  top: 21.719cqh;
+  width: 37.675cqh;
+}
+
+.mahalla__dscf7740 {
+  left: 405.611cqh;
+  top: 37.936cqh;
+  width: 37.774cqh;
+}
+
+.mahalla__dscf7376 {
+  left: 461.086cqh;
+  top: 31.113cqh;
+  width: 56.662cqh;
+}
+
+.mahalla__dscf7671 {
+  left: 535.448cqh;
+  top: 18.060cqh;
+  width: 94.436cqh;
+}
+
+.mahalla__dscf7690 {
+  left: 647.683cqh;
+  top: 18.060cqh;
+  width: 42.422cqh;
+}
+
+.mahalla__dscf7917 {
+  left: 647.683cqh;
+  top: 52.769cqh;
+  width: 42.422cqh;
+}
+
+.mahalla__dscf8115 {
+  left: 707.904cqh;
+  top: 18.060cqh;
+  width: 94.337cqh;
+}
+
+.mahalla__dscf8130 {
+  left: 820.041cqh;
+  top: 18.060cqh;
+  width: 56.563cqh;
+}
+
+.mahalla__dscf8290 {
+  left: 894.403cqh;
+  top: 43.276cqh;
+  width: 56.662cqh;
+}
+
+.mahalla__dscf8402 {
+  left: 968.765cqh;
+  top: 18.060cqh;
+  width: 94.436cqh;
+}
+
+.mahalla__dscf8617 {
+  left: 1080.901cqh;
+  top: 18.060cqh;
+  width: 42.521cqh;
+}
+
+.mahalla__dscf8443 {
+  left: 1137.563cqh;
+  top: 52.769cqh;
+  width: 42.422cqh;
+}
+
+.mahalla__dscf8631 {
+  left: 1197.784cqh;
+  top: 14.995cqh;
+  width: 44.004cqh;
+}
+
+.mahalla__dscf8626 {
+  left: 1259.588cqh;
+  top: 31.113cqh;
+  width: 56.662cqh;
+}
+
+.mahalla__dscf8673 {
+  left: 1333.950cqh;
+  top: 18.554cqh;
+  width: 94.436cqh;
+}
+
+.mahalla__dscf8702 {
+  left: 1446.087cqh;
+  top: 53.164cqh;
+  width: 42.521cqh;
+}
+
+.mahalla__dscf8820 {
+  left: 1506.308cqh;
+  top: 31.113cqh;
+  width: 56.662cqh;
+}
+
+.mahalla__dscf8872 {
+  left: 1580.769cqh;
+  top: 18.554cqh;
+  width: 94.337cqh;
+}
+
+.mahalla__dscf8869 {
+  left: 1692.905cqh;
+  top: 18.554cqh;
+  width: 47.169cqh;
+}
+
+.mahalla__dscf8792 {
+  left: 1754.709cqh;
+  top: 50.099cqh;
+  width: 47.169cqh;
+}
+
+.mahalla__dscf9080 {
+  left: 1819.676cqh;
+  top: 18.554cqh;
+  width: 94.337cqh;
+}
+
+.mahalla__dscf9021 {
+  left: 1931.813cqh;
+  top: 18.554cqh;
+  width: 42.422cqh;
+}
+
+.mahalla__dscf9119 {
+  left: 1931.813cqh;
+  top: 53.164cqh;
+  width: 42.422cqh;
+}
+
+.mahalla__dscf8908 {
+  left: 1992.035cqh;
+  top: 31.113cqh;
+  width: 56.563cqh;
+}
+
+.mahalla__dscf9219 {
+  left: 2066.396cqh;
+  top: 18.554cqh;
+  width: 56.662cqh;
+}
+
+.mahalla__dscf9192 {
+  left: 2140.759cqh;
+  top: 18.554cqh;
+  width: 94.436cqh;
+}
+
+.mahalla__dscf9238 {
+  left: 2252.895cqh;
+  top: 50.000cqh;
+  width: 47.169cqh;
+}
+
+.mahalla__dscf9333 {
+  left: 2317.863cqh;
+  top: 18.554cqh;
+  width: 94.337cqh;
+}
+
+.mahalla__dscf9288 {
+  left: 2429.999cqh;
+  top: 26.367cqh;
+  width: 31.446cqh;
+}
+
+.mahalla__dscf9322 {
+  left: 2479.146cqh;
+  top: 35.859cqh;
+  width: 42.521cqh;
+}
+
+.mahalla__dscf9257 {
+  left: 2539.367cqh;
+  top: 16.973cqh;
+  width: 56.662cqh;
+}
+
+.mahalla__opening-4373 {
+  left: 2637.576cqh;
+  top: 17.006cqh;
+  width: 31.466cqh;
+}
+
+.mahalla__opening-4416 {
+  left: 2675.560cqh;
+  top: 17.006cqh;
+  width: 41.955cqh;
+}
+
+.mahalla__opening-4417 {
+  left: 2724.033cqh;
+  top: 17.006cqh;
+  width: 41.853cqh;
+}
+
+.mahalla__opening-4434 {
+  left: 2675.560cqh;
+  top: 56.212cqh;
+  width: 41.853cqh;
+}
+
+.mahalla__opening-4465 {
+  left: 2724.033cqh;
+  top: 56.212cqh;
+  width: 17.617cqh;
+}
+
+/* ---------- Bio (1512 wide, grows with the text) ---------- */
+
+.bio-page,
+.bio {
+  background: #9bd5c1;
+}
+
+.bio {
+  color: var(--color-ink);
+}
+
+.bio__text {
+  width: 39.418cqw;
+  margin-left: 5.291cqw;
+  padding: 5.291cqw 0 7.672cqw;
+}
+
+.bio__heading {
+  margin: 4.21em 0 2.105em;
+  font: inherit;
+  text-decoration: underline wavy;
+  text-decoration-thickness: 6%;
+  text-decoration-skip-ink: none;
+}
+
+.bio__list li {
+  position: relative;
+  padding-left: 0.75em;
+}
+
+.bio__list li::before {
+  content: "-";
+  position: absolute;
+  left: 0.25em;
+}
+
+.bio__list + p {
+  margin-top: 2.105em;
 }
 
 /* ==========================================================
@@ -464,11 +1103,25 @@
     width: 96px;
   }
 
+  .mahalla {
+    width: 100%;
+    height: auto;
+    container-type: inline-size;
+  }
+
+  .bio__text {
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+
   .work__menu,
   .work__text,
   .work__img,
   .work__player,
-  .ghosts__stack {
+  .fall__carousel,
+  .blind__open,
+  .ghosts__pile {
     position: relative;
     left: auto;
     top: auto;
@@ -476,9 +1129,11 @@
     height: auto;
   }
 
+  /* clears the hand, which is taller than the menu line */
   .work__menu {
     align-self: flex-start;
     width: auto;
+    margin-bottom: 32px;
   }
 
   .film__background {
@@ -489,28 +1144,17 @@
     object-fit: cover;
   }
 
+  .fall__arrow {
+    width: 16px;
+  }
+
+  .fall__slides {
+    width: calc(100% - 56px);
+  }
+
   .work__player {
     padding: 24px;
     text-align: center;
   }
 
-  .loy__request {
-    position: static;
-    transform: none;
-    white-space: normal;
-    text-align: center;
-  }
-
-  .ghosts__stack {
-    aspect-ratio: 671 / 895;
-  }
-
-  .ghosts__stack img,
-  .ghosts__stack .ghosts__untitled,
-  .ghosts__stack .ghosts__burned,
-  .ghosts__stack .ghosts__cock,
-  .ghosts__stack .ghosts__jakho {
-    left: 50%;
-    transform: translateX(-50%);
-  }
 }

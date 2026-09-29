@@ -23,26 +23,55 @@
       <p>That&rsquo;s how this playful series emerged, straddling the line between graphic design and photography&mdash;my two great passions. Interestingly, around the time I was creating these works, I began to practice graphic design less and less and focus more on photography&mdash;perhaps this served as a transitional bridge in many ways.</p>
     </section>
 
-    <button class="ghosts__stack" type="button" aria-label="Show next work">
-      <img class="ghosts__borderline-goja" src="assets/ghosts/borderline-goja.webp" alt="" width="1343" height="1790" loading="lazy">
-      <img class="ghosts__untitled" src="assets/ghosts/borderline-untitled.webp" alt="" width="1268" height="1790" loading="lazy">
-      <img class="ghosts__borderline" src="assets/ghosts/borderline.webp" alt="" width="1343" height="1790" loading="lazy">
-      <img class="ghosts__burned" src="assets/ghosts/burned-outside-bleeding-inside.webp" alt="" width="1194" height="1790" loading="lazy">
-      <img class="ghosts__cock" src="assets/ghosts/cock.webp" alt="" width="1331" height="1790" loading="lazy">
-      <img class="ghosts__jakho" src="assets/ghosts/jakho.webp" alt="" width="1338" height="1790">
-    </button>
-
-    <img class="work__img ghosts__odina" src="assets/ghosts/odina.webp" alt="" width="1194" height="1790">
-    <img class="work__img ghosts__red-center" src="assets/ghosts/red-center.webp" alt="" width="1194" height="1790">
-    <img class="work__img ghosts__opa" src="assets/ghosts/opa.webp" alt="" width="1790" height="1346">
-    <img class="work__img ghosts__ushko" src="assets/ghosts/ushko.webp" alt="" width="1343" height="1790" loading="lazy">
-    <img class="work__img ghosts__untitled-1" src="assets/ghosts/untitled-1.webp" alt="" width="1306" height="1790">
-    <img class="work__img ghosts__toza-asal" src="assets/ghosts/toza-asal.webp" alt="" width="1367" height="1790" loading="lazy">
+    <div class="ghosts__pile">
+      <img class="ghosts__card ghosts__card--wide" src="assets/ghosts/borderline-goja.webp" alt="" width="720" height="960" draggable="false">
+      <img class="ghosts__card ghosts__jakho" src="assets/ghosts/jakho.webp" alt="" width="718" height="960" draggable="false">
+      <img class="ghosts__card ghosts__untitled" src="assets/ghosts/borderline-untitled.webp" alt="" width="680" height="960" draggable="false">
+      <img class="ghosts__card ghosts__card--wide" src="assets/ghosts/borderline.webp" alt="" width="720" height="960" draggable="false">
+      <img class="ghosts__card ghosts__card--narrow" src="assets/ghosts/burned-outside-bleeding-inside.webp" alt="" width="640" height="960" draggable="false">
+      <img class="ghosts__card ghosts__card--narrow" src="assets/ghosts/fruit-seller.webp" alt="" width="640" height="960" draggable="false">
+      <img class="ghosts__card ghosts__cock" src="assets/ghosts/cock.webp" alt="" width="714" height="960" draggable="false">
+      <img class="ghosts__card ghosts__card--narrow" src="assets/ghosts/odina.webp" alt="" width="640" height="960" draggable="false">
+      <img class="ghosts__card ghosts__untitled-1" src="assets/ghosts/untitled-1.webp" alt="" width="700" height="960" draggable="false">
+      <img class="ghosts__card ghosts__opa" src="assets/ghosts/opa.webp" alt="" width="960" height="721" draggable="false">
+      <img class="ghosts__card ghosts__card--narrow" src="assets/ghosts/red-center.webp" alt="" width="640" height="960" draggable="false">
+      <img class="ghosts__card ghosts__card--wide" src="assets/ghosts/ushko.webp" alt="" width="720" height="960" draggable="false">
+      <img class="ghosts__card ghosts__toza-asal" src="assets/ghosts/toza-asal.webp" alt="" width="733" height="960" draggable="false">
+    </div>
   </main>
 
   <script>
-    const stack = document.querySelector('.ghosts__stack');
-    stack.addEventListener('click', () => stack.prepend(stack.lastElementChild));
+    // drag any work around the page; the grabbed one goes on top.
+    // Offsets are % of the card's own size, so they scale with the page
+    let layer = 0;
+
+    for (const card of document.querySelectorAll('.ghosts__card')) {
+      let x = 0, y = 0;
+
+      card.addEventListener('pointerdown', down => {
+        card.setPointerCapture(down.pointerId);
+        card.style.zIndex = ++layer;
+        const w = card.offsetWidth / 100;
+        const h = card.offsetHeight / 100;
+        const startX = down.clientX - x * w;
+        const startY = down.clientY - y * h;
+
+        const move = e => {
+          x = (e.clientX - startX) / w;
+          y = (e.clientY - startY) / h;
+          card.style.translate = `${x}% ${y}%`;
+        };
+        const up = () => {
+          card.removeEventListener('pointermove', move);
+          card.removeEventListener('pointerup', up);
+          card.removeEventListener('pointercancel', up);
+        };
+
+        card.addEventListener('pointermove', move);
+        card.addEventListener('pointerup', up);
+        card.addEventListener('pointercancel', up);
+      });
+    }
   </script>
 </body>
 </html>

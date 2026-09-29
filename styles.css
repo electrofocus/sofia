@@ -94,6 +94,7 @@ img {
   text-underline-offset: 0.12em;
 }
 
+.info__bio,
 .info__contacts-label {
   margin-top: 2.105em;
 }
@@ -121,12 +122,6 @@ img {
   width: 30.622%;
 }
 
-.collage__item--window {
-  left: 83.400%;
-  top: 3.042cqw;
-  width: 11.640%;
-}
-
 .collage__item--chair {
   left: 82.407%;
   top: 14.286cqw;
@@ -134,38 +129,32 @@ img {
 }
 
 .collage__item--pretzel {
-  left: 32.011%;
+  left: 34.392%;
   top: 20.106cqw;
   width: 9.127%;
 }
 
-.collage__item--polaroid {
-  left: 50.728%;
-  top: 21.958cqw;
-  width: 11.706%;
-}
-
 .collage__item--gnome {
-  left: 71.032%;
-  top: 26.984cqw;
+  left: 66.336%;
+  top: 25.265cqw;
   width: 11.376%;
 }
 
 .collage__item--flowers {
-  left: 27.116%;
-  top: 42.196cqw;
+  left: 28.836%;
+  top: 36.772cqw;
   width: 18.982%;
 }
 
 .collage__item--mountains {
   left: 55.093%;
-  top: 42.989cqw;
+  top: 41.468cqw;
   width: 39.749%;
 }
 
 .collage__item--printer {
-  left: 2.579%;
-  top: 48.611cqw;
+  left: 4.563%;
+  top: 44.048cqw;
   width: 14.087%;
 }
 
