@@ -13,10 +13,6 @@
 </head>
 <body class="mahalla-page">
   <main class="work mahalla">
-    <img class="work__hand" src="assets/hand.webp" alt="" width="316" height="409">
-
-    <a class="work__menu" href="index.html">Menu</a>
-
     <section class="work__text mahalla__intro">
       <p>Women of Our Mahalla<br>Documentary photo project<br>2021</p>
       <p>A photo project about women living in the neighborhood adjacent to the original location of the 139 Documentary Center at 210 Sultanalish Mashhadiy Street.</p>
@@ -68,6 +64,11 @@
     <img class="work__img mahalla__opening-4465" src="assets/women-of-our-mahalla/opening-4465.webp" alt="" width="346" height="616" loading="lazy">
   </main>
 
+  <div class="floating">
+    <img class="work__hand" src="assets/hand.webp" alt="" width="316" height="409">
+    <a class="work__menu" href="index.html">Menu</a>
+  </div>
+
   <script>
     // the page runs sideways: turn vertical wheel scrolling into horizontal
     const wide = matchMedia('(min-width: 881px)');
@@ -77,5 +78,6 @@
       e.preventDefault();
     }, { passive: false });
   </script>
+  <script src="menu.js"></script>
 </body>
 </html>

@@ -13,10 +13,6 @@
 </head>
 <body class="blind-page">
   <main class="work blind">
-    <img class="work__hand" src="assets/hand.webp" alt="" width="316" height="409">
-
-    <a class="work__menu" href="index.html">Menu</a>
-
     <section class="work__text blind__intro">
       <p>Blind zone<br>Personal archive, digital collage, print process<br>2022</p>
     </section>
@@ -33,6 +29,11 @@
     </section>
   </main>
 
+  <div class="floating">
+    <img class="work__hand" src="assets/hand.webp" alt="" width="316" height="409">
+    <a class="work__menu" href="index.html">Menu</a>
+  </div>
+
   <dialog class="viewer" aria-label="Blind zone">
     <img src="assets/blind-zone/collage.webp" alt="" width="1792" height="1206">
   </dialog>
@@ -42,5 +43,6 @@
     document.querySelector('.blind__open').addEventListener('click', () => viewer.showModal());
     viewer.addEventListener('click', () => viewer.close());
   </script>
+  <script src="menu.js"></script>
 </body>
 </html>

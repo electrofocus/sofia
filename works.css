@@ -25,6 +25,28 @@
   object-fit: cover;
 }
 
+/* the hand, Menu and the menu panel float over the page, even on scroll.
+   The layer is the viewport's size and a container itself, so cqw / cqh
+   resolve the same as inside .work */
+.floating {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  container-type: size;
+  pointer-events: none;
+  color: var(--color-ink);
+}
+
+.work__menu,
+.menu {
+  font-size: 0.992cqw;
+  line-height: 2.105;
+  pointer-events: auto;
+}
+
 .work__hand {
   position: absolute;
   left: 89.550cqw;
@@ -35,8 +57,41 @@
 
 .work__menu {
   position: absolute;
-  left: 88.757cqw;
+  left: 94.048cqw;
   top: 5.291cqw;
+}
+
+.film-page .work__menu,
+.ghosts-page .work__menu,
+.blind-page .work__menu,
+.jolda-page .work__menu {
+  color: #fff;
+}
+
+/* list of works opened by "Menu" over the page (see menu.js);
+   Figma frame 2264:406, 580px wide at 900, 80 */
+.menu {
+  position: absolute;
+  left: 59.524cqw;
+  top: 5.291cqw;
+  width: 38.360cqw;
+  max-height: calc(100cqh - 5.291cqw);
+  overflow-y: auto;
+  padding: 0.529cqw 1.323cqw 0.840cqw;
+  background: #e9e9e9;
+  color: var(--color-ink);
+}
+
+.menu__label,
+.menu li a {
+  text-decoration: underline wavy;
+  text-decoration-thickness: 6%;
+  text-decoration-skip-ink: none;
+}
+
+.menu__home {
+  color: #4dcd17;
+  text-decoration: none;
 }
 
 .work__text,
@@ -75,10 +130,6 @@
   top: -44.511cqw;
   width: 158.598cqw;
   max-width: none;
-}
-
-.film__menu {
-  left: 93.915cqw;
 }
 
 .film__intro {
@@ -155,6 +206,8 @@
   top: 40.675cqw;
   width: 52.183cqw;
   aspect-ratio: 1;
+  /* keeps dragged cards' z-index below the menu */
+  isolation: isolate;
 }
 
 .ghosts__card {
@@ -431,10 +484,6 @@
 .jolda {
   aspect-ratio: 1512 / 1427;
   color: var(--color-ink);
-}
-
-.jolda__menu {
-  color: #fff;
 }
 
 .jolda__intro {
@@ -783,14 +832,29 @@
     overflow-y: hidden;
   }
 
-  .mahalla .work__hand {
-    left: 137.882cqh;
+  /* the floating layer is the window, not the wide frame: keep the corner
+     layout pinned to the window's right edge (Figma px from x 1512 / 9.82) */
+  .mahalla-page .work__hand {
+    left: calc(100cqw - 16.090cqh);
     width: 16.090cqh;
   }
 
-  .mahalla .work__menu {
-    left: 136.660cqh;
+  .mahalla-page .work__menu {
+    left: calc(100cqw - 9.165cqh);
     top: 8.147cqh;
+  }
+
+  .mahalla-page .work__menu,
+  .mahalla-page .menu {
+    font-size: 1.527cqh;
+  }
+
+  .mahalla-page .menu {
+    left: calc(100cqw - 62.322cqh);
+    max-height: calc(100cqh - 8.147cqh);
+    top: 8.147cqh;
+    width: 59.063cqh;
+    padding: 0.815cqh 2.037cqh 1.293cqh;
   }
 }
 
@@ -1093,14 +1157,34 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
-    padding: 32px 24px;
+    /* leaves room for the floating Menu line and the hand */
+    padding: calc(96px + 2.105em) 24px 32px;
     font-size: 16px;
+  }
+
+  .work__menu,
+  .menu {
+    font-size: 16px;
+  }
+
+  .work__menu {
+    left: 24px;
+    top: 32px;
   }
 
   .work__hand {
     left: auto;
     right: 0;
     width: 96px;
+  }
+
+  .menu {
+    left: 16px;
+    right: 16px;
+    top: 24px;
+    width: auto;
+    padding: 8px 20px 12px;
+    max-height: calc(100cqh - 48px);
   }
 
   .mahalla {
@@ -1115,7 +1199,6 @@
     padding: 0;
   }
 
-  .work__menu,
   .work__text,
   .work__img,
   .work__player,
@@ -1127,13 +1210,6 @@
     top: auto;
     width: 100%;
     height: auto;
-  }
-
-  /* clears the hand, which is taller than the menu line */
-  .work__menu {
-    align-self: flex-start;
-    width: auto;
-    margin-bottom: 32px;
   }
 
   .film__background {

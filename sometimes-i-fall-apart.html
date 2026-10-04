@@ -14,9 +14,6 @@
 <body class="fall-page">
   <main class="work fall">
     <img class="work__background" src="assets/sometimes-i-fall-apart/background.webp" alt="" width="462" height="1591">
-    <img class="work__hand" src="assets/hand.webp" alt="" width="316" height="409">
-
-    <a class="work__menu" href="index.html">Menu</a>
 
     <section class="work__text fall__intro">
       <p>Sometimes I fall apart<br>Experimental film<br>2024</p>
@@ -68,6 +65,11 @@
     <img class="work__img fall__polaroid" src="assets/sometimes-i-fall-apart/polaroid.webp" alt="" width="388" height="462" loading="lazy">
   </main>
 
+  <div class="floating">
+    <img class="work__hand" src="assets/hand.webp" alt="" width="316" height="409">
+    <a class="work__menu" href="index.html">Menu</a>
+  </div>
+
   <script>
     const slides = [...document.querySelectorAll('.fall__slide')];
     let current = 0;
@@ -81,5 +83,6 @@
     document.querySelector('.fall__arrow--prev').addEventListener('click', () => show(-1));
     document.querySelector('.fall__arrow--next').addEventListener('click', () => show(1));
   </script>
+  <script src="menu.js"></script>
 </body>
 </html>
