@@ -55,6 +55,25 @@
   transform: rotate(180deg);
 }
 
+/* with a mouse, the hand waits above the window and slides down while
+   Menu is hovered or the menu is open; touch screens keep it in place */
+@media (hover: hover) {
+  .work__hand {
+    translate: 0 -100%;
+    transition: translate 0.4s ease;
+  }
+
+  .floating:has(.work__menu:hover, .work__menu:focus-visible, .menu:not([hidden])) .work__hand {
+    translate: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work__hand {
+    transition: none;
+  }
+}
+
 .work__menu {
   position: absolute;
   left: 94.048cqw;
