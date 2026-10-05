@@ -217,7 +217,7 @@
   text-align: center;
 }
 
-/* a pile of works; each one can be dragged around (see ghosts.html).
+/* a pile of works; each one can be dragged around (see drag.js).
    Offsets inside are % of the 789px pile */
 .ghosts__pile {
   position: absolute;
@@ -233,14 +233,6 @@
   position: absolute;
   top: 0;
   max-width: none;
-  cursor: grab;
-  touch-action: none;
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-.ghosts__card:active {
-  cursor: grabbing;
 }
 
 .ghosts__card--narrow {

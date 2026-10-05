@@ -43,6 +43,18 @@ img {
   height: auto;
 }
 
+/* dragged around by drag.js */
+.movable {
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.movable:active {
+  cursor: grabbing;
+}
+
 /* ---------- design tokens ---------- */
 
 :root {
@@ -114,6 +126,7 @@ img {
   position: absolute;
   width: auto;
   height: auto;
+  pointer-events: auto;
 }
 
 .collage__item--fabric {
@@ -197,9 +210,11 @@ img {
     padding: 0 24px 32px;
   }
 
+  /* a plain gallery here: dragging would only fight page scrolling */
   .collage__item {
     position: static;
     width: 140px;
+    pointer-events: none;
   }
 
   .collage__item--fabric,
