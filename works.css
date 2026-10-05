@@ -1181,7 +1181,7 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
-    /* leaves room for the floating Menu line and the hand */
+    /* leaves room for the floating Menu line */
     padding: calc(96px + 2.105em) 24px 32px;
     font-size: 16px;
   }
@@ -1197,9 +1197,7 @@
   }
 
   .work__hand {
-    left: auto;
-    right: 0;
-    width: 96px;
+    display: none;
   }
 
   .menu {
@@ -1252,10 +1250,30 @@
     width: calc(100% - 56px);
   }
 
+  .fall__sketch-3,
+  .fall__sketch-4 {
+    display: none;
+  }
+
   .fall__pages {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
+  }
+
+  /* as wide as one page column, centered under the grid */
+  .fall__polaroid {
+    width: calc((100% - 16px) / 3);
+    align-self: center;
+  }
+
+  /* room to drag the cards below the pile; .work clips anything past its edge */
+  .ghosts__pile {
+    margin-bottom: 100%;
+  }
+
+  .jolda {
+    color: #fff;
   }
 
   .work__player {
