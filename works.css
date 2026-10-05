@@ -671,6 +671,11 @@
   transform: rotate(180deg);
 }
 
+/* only groups the pages into a grid on mobile */
+.fall__pages {
+  display: contents;
+}
+
 .fall__page {
   width: 28.241cqw;
 }
@@ -1245,6 +1250,12 @@
 
   .fall__slides {
     width: calc(100% - 56px);
+  }
+
+  .fall__pages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
   }
 
   .work__player {
