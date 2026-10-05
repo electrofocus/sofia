@@ -1,2 +1,5 @@
 .DS_Store
 .claude/
+
+# source footage, too large for the repo
+/*.mp4
