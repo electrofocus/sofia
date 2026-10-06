@@ -141,14 +141,14 @@
   border: 0;
 }
 
-/* ---------- Everything's new, and some things aren't (1512 x 3203) ---------- */
+/* ---------- Everything's new, and some things aren't (1512 x 2358) ---------- */
 
 .film-page {
   background: #000;
 }
 
 .film {
-  aspect-ratio: 1512 / 3203;
+  aspect-ratio: 1512 / 2358;
 }
 
 .film__background {
@@ -200,11 +200,6 @@
 .film__still--5 {
   left: 5.291cqw;
   top: 119.577cqw;
-}
-
-.film__player {
-  left: 5.291cqw;
-  top: 148.148cqw;
 }
 
 /* ---------- Ghosts (1512 x 1681) ---------- */
