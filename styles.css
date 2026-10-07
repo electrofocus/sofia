@@ -124,8 +124,6 @@ img {
 
 .collage__item {
   position: absolute;
-  width: auto;
-  height: auto;
   pointer-events: auto;
 }
 

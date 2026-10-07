@@ -123,14 +123,30 @@
   height: auto;
 }
 
+/* the intro text sits in one of two spots, shared by several pages */
+.film__intro,
+.loy__intro,
+.jolda__intro,
+.circle__intro,
+.fall__intro {
+  left: 5.291cqw;
+  top: 5.291cqw;
+  width: 40.807cqw;
+}
+
+.ghosts__intro,
+.tashkent__intro {
+  left: 28.836cqw;
+  top: 5.291cqw;
+  width: 42.328cqw;
+  text-align: center;
+}
+
 .work__player {
   position: absolute;
   width: 89.352cqw;
   aspect-ratio: 1351 / 761;
-  display: grid;
-  place-items: center;
   background: #d9d9d9;
-  color: var(--color-ink);
 }
 
 .work__player iframe {
@@ -157,12 +173,6 @@
   top: -44.511cqw;
   width: 158.598cqw;
   max-width: none;
-}
-
-.film__intro {
-  left: 5.291cqw;
-  top: 5.291cqw;
-  width: 40.807cqw;
 }
 
 .film__story {
@@ -211,13 +221,6 @@
 
 .ghosts {
   aspect-ratio: 1512 / 1681;
-}
-
-.ghosts__intro {
-  left: 28.836cqw;
-  top: 5.291cqw;
-  width: 42.328cqw;
-  text-align: center;
 }
 
 /* a pile of works; each one can be dragged around (see drag.js).
@@ -295,12 +298,6 @@
     #88ba57 74.519%,
     #3d3c14 100%
   );
-}
-
-.loy__intro {
-  left: 5.291cqw;
-  top: 5.291cqw;
-  width: 40.807cqw;
 }
 
 .loy__media {
@@ -500,12 +497,6 @@
   color: var(--color-ink);
 }
 
-.jolda__intro {
-  left: 5.291cqw;
-  top: 5.291cqw;
-  width: 40.807cqw;
-}
-
 .jolda__player {
   left: 5.423cqw;
   top: 30.423cqw;
@@ -521,12 +512,6 @@
 .circle {
   aspect-ratio: 1512 / 5081;
   color: var(--color-ink);
-}
-
-.circle__intro {
-  left: 5.291cqw;
-  top: 5.291cqw;
-  width: 40.807cqw;
 }
 
 .circle__drawing {
@@ -573,12 +558,6 @@
 .fall {
   aspect-ratio: 1512 / 5211;
   color: var(--color-ink);
-}
-
-.fall__intro {
-  left: 5.291cqw;
-  top: 5.291cqw;
-  width: 40.807cqw;
 }
 
 .fall__sketch-1 {
@@ -737,13 +716,6 @@
   color: var(--color-ink);
 }
 
-.tashkent__intro {
-  left: 28.836cqw;
-  top: 5.291cqw;
-  width: 42.328cqw;
-  text-align: center;
-}
-
 .tashkent__player {
   left: 5.291cqw;
   top: 47.421cqw;
@@ -824,10 +796,7 @@
 }
 
 .viewer img {
-  max-width: 100%;
   max-height: calc(100vh - 32px);
-  width: auto;
-  height: auto;
 }
 
 /* ---------- Women of Our Mahalla (27452 x 982, scrolls sideways) ----------
@@ -1269,11 +1238,6 @@
 
   .jolda {
     color: #fff;
-  }
-
-  .work__player {
-    padding: 24px;
-    text-align: center;
   }
 
 }
