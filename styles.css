@@ -177,10 +177,12 @@ img {
 
 @media (max-width: 880px) {
   .stage {
+    overflow: hidden;
     background: none;
   }
 
   .info {
+    position: relative;
     width: auto;
     margin-left: 0;
     padding: 0;
@@ -199,37 +201,98 @@ img {
     margin-top: 0;
   }
 
+  /* the 414px frame's 366px text measure, so the text wraps as in Figma
+     on any wider screen and the collage stays where it was drawn */
+  .info__header,
+  .info__body {
+    padding-right: max(24px, 100% - 390px);
+  }
+
+  /* the 414px mobile Figma frame, scaled down on narrower phones: left and
+     width are Figma px / 4.14 in %. Vertically in px, as the text doesn't
+     scale: the lower items hang off the bottom of the text so they stay
+     next to bio and contacts however the works list wraps, and the stage
+     crops the printer at the page bottom */
   .collage {
-    position: static;
+    right: auto;
+    width: min(100%, 414px);
     overflow: visible;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 20px;
-    background: var(--color-green);
-    padding: 0 24px 32px;
   }
 
-  /* a plain gallery here: dragging would only fight page scrolling */
+  /* not draggable here, that would only fight page scrolling; also drops
+     offsets dragged on desktop before the window was narrowed */
   .collage__item {
-    position: static;
-    width: 140px;
     pointer-events: none;
+    translate: none !important;
   }
 
-  .collage__item--fabric,
+  .collage__item--fabric {
+    left: 43.237%;
+    top: 112px;
+    width: 41.063%;
+  }
+
+  .collage__item--chair {
+    left: 79.710%;
+    top: 210px;
+    width: 18.357%;
+  }
+
+  .collage__item--pretzel {
+    left: 75.121%;
+    top: auto;
+    bottom: 305px;
+    width: 12.319%;
+  }
+
+  .collage__item--gnome {
+    left: 19.082%;
+    top: auto;
+    bottom: 140px;
+    width: 15.217%;
+  }
+
   .collage__item--mountains {
-    width: 220px;
+    left: 41.546%;
+    top: auto;
+    bottom: 124px;
+    width: 53.623%;
+  }
+
+  .collage__item--printer {
+    left: 67.150%;
+    top: auto;
+    bottom: -38px;
+    width: 22.222%;
+  }
+
+  .collage__item--flowers {
+    display: none;
   }
 }
 
-@media (max-width: 420px) {
-  .collage__item {
-    width: 42%;
+/* narrower than the frame the role and first work wrap later, so the fabric
+   and chair move below those lines */
+@media (max-width: 413px) {
+  .collage__item--fabric {
+    top: 128px;
   }
 
-  .collage__item--fabric,
-  .collage__item--mountains {
-    width: 100%;
+  .collage__item--chair {
+    top: 226px;
+  }
+}
+
+/* too narrow to clear the works list and, below 300px, the role */
+@media (max-width: 339px) {
+  .collage__item--chair,
+  .collage__item--pretzel {
+    display: none;
+  }
+}
+
+@media (max-width: 299px) {
+  .collage__item--fabric {
+    display: none;
   }
 }

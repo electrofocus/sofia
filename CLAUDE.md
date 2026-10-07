@@ -30,10 +30,11 @@ At `max-width: 880px` (in both stylesheets) the absolute layout is dropped: `.wo
 
 - To lay out a run of desktop-positioned siblings differently on mobile (e.g. the 3-column `.fall__pages` grid), wrap them in a div that is `display: contents` on desktop — the children keep positioning against `.work` — and give the wrapper `display: grid` in the mobile block.
 - `.work` has `overflow: hidden`, so anything dragged past its edge is clipped; the Ghosts pile gets a bottom margin on mobile for that reason.
+- The homepage is the exception to dropping the absolute layout: on mobile its collage stays overlaid on the text, reproducing a 414×896 mobile Figma frame. The text measure is capped at the frame's 366px so it wraps as in Figma on any wider screen, and the collage is a frame `min(100%, 414px)` wide with offsets as **Figma px / 4.14 in %** horizontally but in px vertically, since the text doesn't scale. It lives inside `.info` (positioned on mobile only) so the lower items can hang off the bottom of the text. Below 414px, a few items move or hide because the text wraps more.
 
 ## Interactive bits
 
 - `menu.js` (loaded by every work page, not the homepage) — builds the `.menu` panel of all works next to `.work__menu` inside `.floating` and toggles it; any click outside the panel or Esc closes it. Without JS the Menu link just goes to `index.html`.
-- `drag.js` (loaded by `index.html` and `ghosts.html`) — makes every `.movable` element draggable via pointer events (the grabbed one goes on top); offsets are stored as `translate` percentages of the element's own size so they scale with the page. Used by the homepage collage items (desktop only — the mobile layout turns their pointer events off so they don't fight scrolling) and the `.ghosts__card`s.
+- `drag.js` (loaded by `index.html` and `ghosts.html`) — makes every `.movable` element draggable via pointer events (the grabbed one goes on top); offsets are stored as `translate` percentages of the element's own size so they scale with the page. Used by the homepage collage items (desktop only — the mobile layout turns their pointer events off so they don't fight scrolling, and overrides any dragged `translate`) and the `.ghosts__card`s.
 - `sometimes-i-fall-apart.html` — prev/next carousel toggling `.is-active` on `.fall__slide`.
 - `blind-zone.html` — clicking the work opens a full-screen `<dialog class="viewer">`.
